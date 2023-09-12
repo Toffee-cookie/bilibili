@@ -1,0 +1,1374 @@
+body {
+    height: 3000px;
+    background-color: #fff;
+}
+
+
+/*就是视频动画那一部分 */
+
+.header {
+    position: relative;
+    width: 100%;
+    height: 195px;
+}
+
+
+/* 视频动画 */
+
+.header video {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /* 让video充满屏幕 */
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* 头部导航栏 */
+
+
+/* 利用flex布局让一行中的导航栏布局 */
+
+.header .nav {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    top: 0;
+    padding: 0 24px;
+    width: 100%;
+    height: 64px;
+    /* 渐变效果，b站导航栏有个阴影渐变效果，透明渐变 */
+    background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .3), rgba(0, 0, 0, 0));
+}
+
+
+/* 给ul也设置flex布局,x轴和y轴水平居中对齐 */
+
+.header .nav-left {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .nav-left li {
+    margin: 0 10px;
+}
+
+
+/* 给链接设置样式 */
+
+.header .nav-left a {
+    height: 64px;
+    line-height: 64px;
+    color: #fff;
+    font-size: 17px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+/* 给字体图标，图标设置样式 */
+
+.header .nav-left .iconfont {
+    font-size: 24px;
+}
+
+
+/* 顶部导航栏右侧 */
+
+
+/* flex布局 */
+
+.header .nav-right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 30px;
+}
+
+.header .nav-right li {
+    margin: 0 10px;
+}
+
+
+/* 字体图标设置样式 */
+
+.header .nav-right li span {
+    font-size: 24px;
+    color: #fff;
+}
+
+
+/* 给左右侧的那个投稿的字体图标设置，背景颜色，然后正方形有弧度 */
+
+.header .nav-right li:last-child {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 40px;
+    background-color: #fa7298;
+}
+
+
+/* 给导航栏中部分小li设置，鼠标放上去就会跳动一下的样式 */
+
+.header li:hover {
+    transform: translateY(-8px);
+    transition: all .1s;
+}
+
+.header .nav-right li:nth-child(2) {
+    position: relative;
+}
+
+
+/* 给短信图标右上角加一个信息未读的状态 */
+
+
+/* 短信右上角的小红点，运用定位去做 */
+
+.header .nav-right li:nth-child(2) .icon {
+    position: absolute;
+    right: -9px;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #fa5a57;
+    color: #fff;
+}
+
+
+/* 首页和投稿属性不设置跳动的样式 */
+
+.header .nav-left li:first-child {
+    transform: none;
+}
+
+.header .nav-right li:last-child {
+    transform: none;
+}
+
+
+/* 给投稿那个按钮设置过渡效果 */
+
+.header .nav-right li:last-child:hover {
+    background-color: #fc8bab;
+    transition: all .3s;
+}
+
+
+/* 头部中间的那个搜索框部分制作 */
+
+
+/* 搜索框用的还是flex布局 */
+
+.header .search {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 530px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #ebeced;
+}
+
+
+/* 搜索框里面大体分两部分，左侧的input的输入框和右侧的搜索按钮 */
+
+.header .search input {
+    padding-left: 20px;
+    width: 430px;
+    height: 32px;
+    background-color: #ebeced;
+}
+
+
+/* 右侧的按钮我是用链接做的 里面的用字体图标 */
+
+.header .search a {
+    display: inline-block;
+    margin-right: 10px;
+    border-radius: 10px;
+    line-height: 40px;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+}
+
+.header .search a span {
+    font-size: 22px;
+}
+
+
+/* 对于鼠标悬浮到搜索框时候的样式 */
+
+
+/* 三个hover制作 */
+
+.header .search:hover {
+    background-color: #fff;
+}
+
+.header .search:hover input {
+    background-color: #fff;
+}
+
+
+/* 鼠标悬浮到按钮上的时候背景色的变化 */
+
+.header .search:hover a {
+    transition: all .5s;
+    background-color: #e3e5e7;
+}
+
+
+/* 以上就是导航栏的制作，对于头部还有一个需要做的就是logo部分制作 */
+
+.header .logo {
+    display: block;
+    position: absolute;
+    top: 88px;
+    left: 77px;
+    width: 180px;
+    height: 77px;
+}
+
+.header .logo img {
+    width: 100%;
+    height: 100%;
+    background-size: 100%, 100%;
+}
+
+
+/* 大会员左边那个头像部分制作 */
+
+.user {
+    position: absolute;
+    z-index: 2;
+    top: 6px;
+    right: 375px;
+    width: 46px;
+    height: 46px;
+}
+
+.user a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.user a img {
+    border: 2px solid #fff;
+    border-radius: 23px;
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+}
+
+
+/* 给头像设置样式 */
+
+.header .user:hover img {
+    transform-origin: right top;
+    transform: scale(2.5);
+    transition: all .5s;
+}
+
+.header .Username:hover .User {
+    display: block;
+}
+
+
+/* 个人信息部分 */
+
+.User {
+    position: absolute;
+    z-index: 1;
+    padding: 0 40px;
+    right: 258px;
+    top: 80px;
+    width: 370px;
+    height: 600px;
+    border-radius: 15px;
+    background-color: #fff;
+    display: none;
+}
+
+.User h3 {
+    font-size: 20px;
+    font-weight: 400;
+    color: #18191c;
+    margin-top: 40px;
+    margin-left: 80px;
+}
+
+.User .intro {
+    padding-left: 70px;
+    font-size: 12px;
+    color: #18191c;
+}
+
+.User p span {
+    font-size: 12px;
+    color: #989ba7;
+}
+
+.User .LV6 {
+    width: 300px;
+    height: 20px;
+}
+
+.User .LV6-left {
+    float: left;
+    font-size: 13px;
+    font-weight: 700;
+    color: #ee692d;
+}
+
+
+/* 经验条 */
+
+.User .up-1 {
+    float: left;
+    margin-left: 5px;
+    margin-top: 8px;
+    width: 220px;
+    height: 3px;
+    background-color: #f3cb85;
+}
+
+.User .up-2 {
+    float: left;
+    margin-top: 8px;
+    width: 30px;
+    height: 3px;
+    background-color: #ccc;
+}
+
+.User .grow {
+    padding-left: 30px;
+    color: #989ba7;
+}
+
+
+/* 等级 */
+
+.User .LV6-right {
+    float: right;
+    font-size: 13px;
+    font-weight: 700;
+    color: #ccc;
+}
+
+
+/* 关注 粉丝 动态数据这一行 */
+
+.User .User-math {
+    width: 270px;
+    height: 40px;
+}
+
+
+/* 就是放三个链接浮动 */
+
+.User .User-math a {
+    float: left;
+    text-align: center;
+    width: 90px;
+    height: 40px;
+}
+
+
+/* 链接里面有p和span标签 */
+
+.User .User-math a p {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.User .User-math a span {
+    font-size: 14px;
+    color: #989ba7;
+}
+
+
+/* 然后设置鼠标浮动时候的样式就好了 */
+
+.User .User-math a:hover p {
+    transition: all .3s;
+    color: #00aeec;
+}
+
+.User .User-math a:hover span {
+    transition: all .3s;
+    color: #00aeec;
+}
+
+
+/* 制作个人信息的主要部分ul li */
+
+.User .User-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: space-between;
+    width: 280px;
+    height: 400px;
+}
+
+.User .User-main li a {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 14px;
+    width: 280px;
+    height: 40px;
+    border-radius: 6px;
+}
+
+.User .User-main li a svg {
+    font-size: 22px;
+}
+
+.User .User-main li a:hover {
+    background-color: #e3e5e7;
+    transition: all .4s;
+    color: #666;
+}
+
+
+/* 头部部分下面的那个快捷导航部分 */
+
+.shortcut {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    padding: 0 56px;
+}
+
+
+/* 快捷导航左边的那个三个东西的部分 */
+
+.shortcut-left {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 168px;
+    height: 64px;
+}
+
+.shortcut-left a {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.shortcut-left a span {
+    text-align: center;
+    border-radius: 25px;
+    line-height: 50px;
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    color: #fff;
+}
+
+.shortcut-left .s-1 img {
+    margin-bottom: 7px;
+}
+
+.shortcut-left .s-2 span {
+    background-color: #f07775;
+}
+
+.shortcut-left .s-2 span:hover {
+    background-color: #f38e8c;
+    transition: all .3s;
+}
+
+.shortcut-left .s-3 span {
+    background-color: #59ca73;
+}
+
+.shortcut-left .s-3 span:hover {
+    background-color: #6cd083;
+    transition: all .3s;
+}
+
+.shortcut-left .s-1 span img {
+    border-radius: 25px;
+    width: 100%;
+    height: 100%;
+}
+
+.shortcut-left a i {
+    font-size: 14px;
+    color: #18191c;
+}
+
+
+/* 快捷导航中心制作 */
+
+
+/* flex布局 */
+
+.shortcut-main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+    width: 900px;
+    height: 66px;
+}
+
+.shortcut-main li {
+    border-radius: 6px;
+    width: 95px;
+    height: 28px;
+    background-color: #f6f7f8;
+}
+
+.shortcut-main li:hover {
+    background-color: #e2e4e6;
+    transition: all .3s;
+}
+
+.shortcut-main li a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    line-height: 28px;
+    text-align: center;
+    font-size: 14px;
+    color: #989ba7;
+}
+
+
+/* 快捷导航右侧部分 */
+
+.shortcut-right {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: space-between;
+    width: 230px;
+    height: 66px;
+}
+
+.shortcut-right li {
+    width: 60px;
+    height: 28px;
+}
+
+.shortcut-right li a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.shortcut-right li a span {
+    font-size: 25px;
+    color: #61666d;
+}
+
+.shortcut-right li a i {
+    font-size: 16px;
+}
+
+.shortcut-right li a:hover {
+    color: #00aeec;
+    transition: all .3s;
+}
+
+
+/* 中间的版心部分 */
+
+.main {
+    margin: 0 auto;
+    margin-top: 20px;
+    position: relative;
+    width: 1420px;
+    height: 500px;
+}
+
+
+/* 左侧的轮播图部分 */
+
+.main-left {
+    float: left;
+    position: relative;
+    width: 580px;
+    height: 320px;
+    background: rgba(0, 0, 0, .3);
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.main-left ul {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.main-left li {
+    position: absolute;
+    top: 0;
+    width: 580px;
+    height: 400px;
+    /* 调用动画 */
+    animation-name: move;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+}
+
+.main-left li a {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.main-left li:nth-child(1) {
+    background: url(images/轮播图-1.png) no-repeat;
+    background-size: 100%, 100%;
+    left: 0;
+}
+
+.main-left li:nth-child(2) {
+    background: url(images/轮播图-2.png) no-repeat;
+    background-size: 100%, 100%;
+    left: 100%;
+}
+
+.main-left li:nth-child(3) {
+    background: url(images/轮播图-3.png) no-repeat;
+    background-size: 100%, 100%;
+    left: 200%;
+}
+
+.main-left li:nth-child(4) {
+    background: url(images/轮播图-4.png) no-repeat;
+    background-size: 100%, 100%;
+    left: 300%;
+}
+
+.main-left li:nth-child(5) {
+    background: url(images/轮播图-5.png) no-repeat;
+    background-size: 100%, 100%;
+    left: 400%;
+}
+
+@keyframes move {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-100%);
+    }
+    50% {
+        transform: translateX(-200%);
+    }
+    75% {
+        transform: translateX(-300%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+/* 轮播图左右箭头按钮效果 */
+
+.main-left .prev {
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    text-align: center;
+    line-height: 36px;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, .3);
+    color: #fff;
+}
+
+.main-left .next {
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    text-align: center;
+    line-height: 36px;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, .3);
+    color: #fff;
+}
+
+.main-left .prev:hover {
+    background: rgba(0, 0, 0, .8);
+    transition: all .3s;
+}
+
+.main-left .next:hover {
+    background: rgba(0, 0, 0, .8);
+    transition: all .3s;
+}
+
+
+/* 轮播图介绍 */
+
+.main-left .intro {
+    position: absolute;
+    bottom: 20px;
+    left: 15px;
+    font-weight: 400;
+    font-size: 18px;
+    color: #fff;
+}
+
+
+/* 右边的6个推荐视频 */
+
+.main-right {
+    float: right;
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+    flex-wrap: wrap;
+    width: 820px;
+    height: 100%;
+}
+
+
+/* 每一个小li部分制作，li里面包含了 图片 ， 文字描述 ，up主部分，并且需要分开添加a链接 */
+
+.main-right li {
+    position: relative;
+    width: 265px;
+    height: 245px;
+}
+
+
+/* 利用定位 右上角的播放按钮定位 */
+
+.main-right li .box {
+    position: absolute;
+    border-radius: 20px;
+    width: 265px;
+    height: 150px;
+    background: url(images/版心图-1.png) no-repeat;
+    background-size: 100%;
+}
+
+
+/* 图片右上角的播放按钮 */
+
+.main-right li .box .open {
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    color: #fff;
+    font-size: 26px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 10px;
+    text-align: center;
+    background: rgba(0, 0, 0, .4);
+    opacity: 0;
+}
+
+
+/* 鼠标悬浮时候播放按钮显示 */
+
+.main-right li .box:hover .open {
+    opacity: 1;
+    transition: all .5s;
+}
+
+
+/* 视频介绍部分 */
+
+.main-right li .box-1 {
+    position: absolute;
+    top: 160px;
+    left: 10px;
+    color: #18191c;
+    font-size: 16px;
+}
+
+
+/* 当鼠标悬浮到视频介绍时候变色 */
+
+.main-right li .box-1:hover {
+    color: #00aeec;
+    transition: all .3s;
+}
+
+
+/* 点赞和up主部分 */
+
+.main-right li .box-2 {
+    position: absolute;
+    top: 220px;
+    left: 10px;
+}
+
+
+/* 点赞部分 */
+
+.main-right li .box-2 .dianzan {
+    float: left;
+    text-align: center;
+    line-height: 15px;
+    border-radius: 5px;
+    width: 60px;
+    height: 15px;
+    color: #ff7f24;
+    background-color: #fff0e3;
+}
+
+
+/* up主 */
+
+.main-right li .box-2 .upzhu {
+    float: left;
+    font-size: 12px;
+    margin-left: 5px;
+    color: #666;
+}
+
+
+/* 当鼠标悬浮时变色 */
+
+.main-right li .box-2:hover .upzhu {
+    color: #00aeec;
+    transition: all .3s;
+}
+
+
+/* 变换图片 */
+
+.main-right li:nth-child(2) .box {
+    background: url(images/版心图-2.png) no-repeat;
+    background-size: 100%;
+}
+
+.main-right li:nth-child(3) .box {
+    background: url(images/版心图-3.png) no-repeat;
+    background-size: 100%;
+}
+
+.main-right li:nth-child(4) .box {
+    background: url(images/版心图-4.png) no-repeat;
+    background-size: 100%;
+}
+
+.main-right li:nth-child(5) .box {
+    background: url(images/版心图-5.png) no-repeat;
+    background-size: 100%;
+}
+
+.main-right li:nth-child(6) .box {
+    background: url(images/版心图-6.png) no-repeat;
+    background-size: 100%;
+}
+
+
+/* 番剧部分制作 */
+
+.fanju {
+    margin: 0 auto;
+    width: 1420px;
+    height: 500px;
+    margin-top: 50px;
+}
+
+
+/* 番剧左侧的8个视频和头部制作 */
+
+.fanju-left {
+    float: left;
+    width: 1110px;
+    height: 500px;
+}
+
+
+/* 头部制作 */
+
+
+/* 利用flex布局 排列 */
+
+.fanju-left-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 45px;
+}
+
+
+/* 番剧图标 */
+
+.fanju-left-header .iconfont {
+    float: left;
+    color: #fdde80;
+    font-size: 40px;
+}
+
+.fanju-left-header h3 a {
+    float: left;
+    margin-left: 5px;
+    font-size: 24px;
+    font-weight: 400;
+    color: #18191c;
+}
+
+.fanju-left-header h3 a:hover {
+    color: #00aeec;
+    transition: all .3s;
+}
+
+
+/* 天数列表 */
+
+.fanju-left-header .days {
+    float: left;
+    margin-left: 20px;
+    display: flex;
+    width: 500px;
+    height: 32px;
+    border-radius: 10px;
+    background-color: #ebeced;
+}
+
+
+/* 利用flex布局 */
+
+.fanju-left-header .days li {
+    flex: 1;
+    border-radius: 10px;
+    width: 58px;
+    height: 32px;
+    background-color: #ebeced;
+    text-align: center;
+    line-height: 32px;
+    font-size: 14px;
+}
+
+
+/* 鼠标悬浮时候变色 */
+
+.fanju-left-header .days li:hover {
+    background-color: #ccc;
+    transition: all .3s;
+}
+
+.fanju-left-header .days li a {
+    display: inline-block;
+    color: #18191c;
+}
+
+.fanju-left-header .days li:first-child {
+    background-color: #00aeec;
+}
+
+.fanju-left-header .days li:first-child a {
+    color: #fff;
+}
+
+
+/* 番剧下面的视频栏部分 */
+
+.fanju .fanju-left .fanju-left-body {
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 440px;
+    margin-top: 15px;
+}
+
+
+/* 以下代码又用到了上面main模块的部分 */
+
+.fanju .fanju-left .fanju-left-body li {
+    position: relative;
+    width: 265px;
+    height: 210px;
+}
+
+.fanju .fanju-left-body li .box {
+    position: absolute;
+    border-radius: 20px;
+    width: 265px;
+    height: 150px;
+    background: url(images/番剧-1.png) no-repeat;
+    background-size: 100%;
+}
+
+.fanju .fanju-left-body li .box span {
+    color: #fff;
+    font-size: 14px;
+}
+
+.fanju .fanju-left-body li .box span:nth-child(1) {
+    float: left;
+    margin-left: 10px;
+}
+
+.fanju .fanju-left-body li .box span:nth-child(2) {
+    float: left;
+    margin-left: 20px;
+}
+
+.fanju .fanju-left-body li .box span:nth-child(3) {
+    float: right;
+    margin-right: 10px;
+}
+
+
+/* 图片右上角的播放按钮 */
+
+.fanju .fanju-left-body li .box .open {
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    color: #fff;
+    font-size: 26px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 10px;
+    text-align: center;
+    background: rgba(0, 0, 0, .4);
+    opacity: 0;
+}
+
+
+/* 鼠标悬浮时候播放按钮显示 */
+
+.fanju .fanju-left-body li .box:hover .open {
+    opacity: 1;
+    transition: all .5s;
+}
+
+
+/* 视频介绍部分 */
+
+.fanju .fanju-left-body li .box-1 {
+    position: absolute;
+    top: 160px;
+    left: 10px;
+    color: #18191c;
+    font-size: 14px;
+}
+
+
+/* 当鼠标悬浮到视频介绍时候变色 */
+
+.fanju .fanju-left-body li .box-1:hover {
+    color: #00aeec;
+    transition: all .3s;
+}
+
+
+/* 点赞和up主部分 */
+
+.fanju .fanju-left-body li .box-2 {
+    position: absolute;
+    top: 190px;
+    left: 10px;
+}
+
+.fanju .fanju-left-body li .box-2 .upzhu {
+    float: left;
+    font-size: 12px;
+    margin-left: 5px;
+    color: #666;
+}
+
+
+/* 当鼠标悬浮时变色 */
+
+.fanju .fanju-left-body li .box-2:hover .upzhu {
+    color: #00aeec;
+    transition: all .3s;
+}
+
+
+/* 换图片 */
+
+.fanju .fanju-left-body li:nth-child(2) .box {
+    background: url(images/番剧-2.png) no-repeat;
+    background-size: 100%;
+}
+
+.fanju .fanju-left-body li:nth-child(3) .box {
+    background: url(images/番剧-3.png) no-repeat;
+    background-size: 100%;
+}
+
+.fanju .fanju-left-body li:nth-child(4) .box {
+    background: url(images/番剧-4.png) no-repeat;
+    background-size: 100%;
+}
+
+.fanju .fanju-left-body li:nth-child(5) .box {
+    background: url(images/番剧-5.png) no-repeat;
+    background-size: 100%;
+}
+
+.fanju .fanju-left-body li:nth-child(6) .box {
+    background: url(images/番剧-6.png) no-repeat;
+    background-size: 100%;
+}
+
+.fanju .fanju-left-body li:nth-child(7) .box {
+    background: url(images/番剧-7.png) no-repeat;
+    background-size: 100%;
+}
+
+.fanju .fanju-left-body li:nth-child(8) .box {
+    background: url(images/番剧-8.png) no-repeat;
+    background-size: 100%;
+}
+
+
+/* 番剧右边的排行榜部分 */
+
+.fanju .fanju-right {
+    float: right;
+    width: 310px;
+    height: 500px;
+}
+
+
+/* 排行榜的头部部分 */
+
+.fanju .fanju-right-header {
+    margin: 0 auto;
+    width: 290px;
+    height: 45px;
+}
+
+.fanju .fanju-right-header h3 {
+    float: left;
+    line-height: 45px;
+    font-size: 22px;
+    font-weight: 400;
+}
+
+
+/* 排行榜的下面具体内容部分 */
+
+.fanju .fanju-right-body {
+    display: flex;
+    flex-direction: column;
+    margin: 15px auto;
+    height: 440px;
+    width: 290px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+
+/* 每个小li利用flex布局制作 */
+
+.fanju .fanju-right-body li {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+
+/* 偶数 和 奇数背景色变换 */
+
+.fanju .fanju-right-body li:nth-child(odd) {
+    background-color: #fff;
+}
+
+.fanju .fanju-right-body li:nth-child(even) {
+    background-color: #f6f7f8
+}
+
+
+/* 序号部分制作 */
+
+.fanju .fanju-right-body li span {
+    display: inline-block;
+    flex: 1;
+    font-style: italic;
+    font-size: 16px;
+    padding-left: 17px;
+    color: #ccc;
+}
+
+
+/* 番名部分制作 */
+
+.fanju .fanju-right-body li a {
+    display: inline-block;
+    flex: 8;
+    font-size: 14px;
+    /* line-height: 50px; */
+}
+
+.fanju .fanju-right-body li a:hover {
+    color: #00aeec;
+    transition: all .3s;
+}
+
+
+/* 第一 第二 第三序号的颜色 */
+
+.fanju .fanju-right-body li:nth-child(1) span {
+    color: #ff473d;
+    border-radius: 10px 10px 0 0;
+}
+
+.fanju .fanju-right-body li:nth-child(2) span {
+    color: #f67e2b;
+}
+
+.fanju .fanju-right-body li:nth-child(3) span {
+    color: #ff9214;
+}
+
+
+/* 让最后li边框有弧度 */
+
+.fanju .fanju-right-body li:last-child {
+    border-radius: 0 0 10px 10px;
+}
+
+
+/* 底部部分 */
+
+.footer {
+    margin-top: 55px;
+    padding: 40px 50px;
+    width: 100%;
+    height: 500px;
+    background-color: #f6f7f8;
+}
+
+
+/* 底部的头部部分 */
+
+.footer .footer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+    border-bottom: 1px solid #ccc;
+}
+
+
+/* 无序列表制作左边和中间的那个小导航栏 */
+
+.footer-header dl {
+    width: 300px;
+    height: 200px;
+}
+
+.footer-header dl dt {
+    font-size: 16px;
+    color: #989ba7;
+    margin-bottom: 20px;
+}
+
+.footer-header dl dd a {
+    float: left;
+    color: #18191c;
+    font-size: 14px;
+    margin: 5px 8px;
+}
+
+
+/* ul给右边四个制作 */
+
+.footer .footer-header ul {
+    display: flex;
+    margin-top: -84px;
+    width: 400px;
+    height: 100px;
+}
+
+.footer .footer-header ul li {
+    flex: 1;
+}
+
+.footer .footer-header ul li a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: #18191c;
+    font-size: 14px;
+}
+
+.footer .footer-header ul li a span {
+    display: inline-block;
+    text-align: center;
+    line-height: 60px;
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    font-size: 40px;
+}
+
+
+/* 底部右边的四个链接给字体图标添加颜色 */
+
+.footer .footer-header ul li:nth-child(1) a span {
+    color: #3752c8;
+}
+
+.footer .footer-header ul li:nth-child(2) a span {
+    color: #00aeec;
+}
+
+.footer .footer-header ul li:nth-child(3) a span {
+    color: #db4437;
+}
+
+.footer .footer-header ul li:nth-child(4) a span {
+    color: #57bb40;
+}
+
+
+/* 底部部分 */
+
+.footer .footer-body {
+    margin: 20px auto;
+    width: 100%;
+    height: 200px;
+}
+
+.footer .footer-body p {
+    text-align: center;
+    margin-top: 10px;
+    color: #989ba7;
+}
